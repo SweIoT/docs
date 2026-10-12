@@ -1,0 +1,74 @@
+/* SweIoT brand colours, taken from the logo */
+:root {
+  --sweiot-navy: #293b82;
+  --sweiot-amber: #eaa83e;
+  --sweiot-ink: #1d1e1b;
+  --sweiot-paper: #f5f7fb;
+}
+
+/* Light scheme */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--sweiot-ink);   /* header banner */
+  --md-primary-fg-color--light: #3a3b38;
+  --md-primary-fg-color--dark: #0f100e;
+  --md-accent-fg-color: #c98a24;          /* darker amber so links stay readable on white */
+  --md-accent-fg-color--transparent: rgba(234, 168, 62, 0.1);
+  --md-typeset-a-color: var(--sweiot-navy);
+  --md-default-fg-color: var(--sweiot-ink);
+}
+
+/* Dark scheme */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--sweiot-ink);   /* header banner */
+  --md-primary-fg-color--light: #3a3b38;
+  --md-primary-fg-color--dark: #0f100e;
+  --md-accent-fg-color: var(--sweiot-amber);
+  --md-accent-fg-color--transparent: rgba(234, 168, 62, 0.1);
+  --md-typeset-a-color: #f0c070;
+  --md-default-bg-color: #1e2130;         /* navy-tinted dark background, lighter than the header */
+  --md-default-fg-color: var(--sweiot-paper);
+}
+
+/* Wide header logo instead of the default square icon */
+.md-header__button.md-logo img {
+  height: 1.7rem;
+  width: auto;
+}
+
+/* Amber highlight for the active nav item */
+.md-nav__link--active {
+  color: var(--md-accent-fg-color);
+}
+
+/* Amber indicator under the active content tab */
+.js .md-typeset .tabbed-labels::before {
+  background: var(--md-accent-fg-color);
+}
+.md-typeset .tabbed-set > input:checked ~ .tabbed-labels > label {
+  border-bottom-color: transparent;
+}
+
+/* Tables: fill the content width and let the browser size columns by their
+   content. Material's default gives every column a 100px minimum, which
+   overflows on wide tables. */
+.md-typeset__table {
+  width: 100%;
+}
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+}
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  min-width: 0;
+  padding: 0.6em 0.8em;
+  vertical-align: top;
+}
+
+/* Diagrams with dark text on a transparent background: give them a light
+   plate in dark mode so they stay readable */
+[data-md-color-scheme="slate"] .md-typeset figure img {
+  background: #fff;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+}

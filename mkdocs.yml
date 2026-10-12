@@ -1,0 +1,72 @@
+site_name: SweIoT Docs
+site_description: Guides for the SweIoT gateway, R-IoT radar sensors, mobile app and Admin UI.
+# Set this to the final address once the domain is decided, e.g. https://docs.sweiot.se/
+# site_url: https://docs.sweiot.se/
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+validation:
+  links:
+    absolute_links: warn
+    unrecognized_links: warn
+
+nav:
+  - Home: index.md
+  - Gateway:
+      - Setup guide: gateway/setup-guide.md
+      - User guides:
+          - General: gateway/GW_usage.md
+          - 5.1: gateway/GW_usage_5.1.md
+  - R-IoT radar sensor:
+      - XM122 (A111) user manual: r-iot/xm122.md
+      - XM126 (A121) user manual: r-iot/xm126.md
+  - Admin UI:
+      - Overview: admin-ui/index.md

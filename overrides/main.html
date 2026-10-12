@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{#
+  Theme-aware favicon. The PNG set in mkdocs.yml stays as the fallback for
+  browsers without SVG favicon support; this SVG is listed last so browsers
+  that support it prefer it. The SVG swaps its black circles to a light
+  colour when the browser is in dark mode.
+#}
+{% block extrahead %}
+  <link rel="icon" type="image/svg+xml" href="{{ 'assets/favicon.svg' | url }}">
+{% endblock %}
